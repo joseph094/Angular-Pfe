@@ -1,0 +1,12 @@
+.fa.fa-trash:hover{
+    color: red;
+}
+.fa.fa-refresh:hover{
+    color:#ffcc00    ;
+}
+table{
+    border-color:grey;
+    box-shadow: 1px 1px 1px 1px #999;}
+    .mini {
+        width : 40px;
+    }

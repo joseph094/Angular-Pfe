@@ -1,0 +1,60 @@
+<mat-dialog-content>
+    <div class="container">
+        <div class="row gutters">
+            <div class="row">
+                        <div class="row gutters">
+                            <div class="col-md-10">
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="devise">La devise que vous vendez :</label>
+
+                                   <input [(ngModel)]="this.selectedBase.name" type="text" step="any" class="form-control"
+                                         required readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="devise">La devise que vous achetez :</label>
+                                    <input [(ngModel)]="this.selectedQuote.name" type="text" step="any" class="form-control"
+                                    required readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="qte">Quantite:</label>
+                                    <input [(ngModel)]="offre.quantite" type="number" step="any" class="form-control"
+                                        id="qte" placeholder="Saisir Combien vous vendez" required readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="valeur">Valeur :</label>
+                                    <input [(ngModel)]="offre.valeur" type="number" step="any" class="form-control"
+                                        id="valeur" placeholder=" pour combien vous vendez ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div >
+                                <button type="button" id="submit" name="submit"
+                                    class="btn btn-secondary">Annuler</button>
+                                <button type="button" id="submit" name="submit" 
+                                    class="btn btn-primary" (click)="update_offre()">Update</button>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div style="margin-top: 10px;">
+                                <p style=" color: #4F8A10; " >{{messageSucces}}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+     
+
+</mat-dialog-content>

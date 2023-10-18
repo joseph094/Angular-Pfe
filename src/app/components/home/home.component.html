@@ -1,0 +1,312 @@
+<!-- Jumbotron -->
+<div class="jumbotron text-center">
+
+	<!-- Title -->
+	<h2 class="card-title h2">Comment Acheter et Vendre de la Crypto-monnaie</h2>
+	<!-- Subtitle -->
+	<p class="blue-text my-4 font-weight-bold">Laevitas est le meilleur endroit pour acheter et vendre facilement des
+		crypto-monnaies.</p>
+
+	<!-- Grid row -->
+	<div class="row d-flex justify-content-center">
+
+		<!-- Grid column -->
+		<div class="col-xl-7 pb-2">
+
+			<p class="card-text">Créé en 2020 Laevitas est une plateforme d'analyse de données basée sur des modèles
+				financiers
+				quantitatifs pour le marché des crypto-actifs.
+
+				Laevitas est aussi un véritable incubateur de compétences qui aide ses collaborateurs à s'épanouir et à
+				réaliser leur
+				plein potentiel, en contribuant à des projets d’envergure et à fort impact tout en développant leurs
+				compétences et leur expertise technologique..</p>
+
+
+		</div>
+		<!-- Grid column -->
+
+	</div>
+	<!-- Grid row -->
+
+	<hr class="my-4">
+
+	<div class="pt-2">
+
+		<button routerLink="/signin"  calss="btn1" type="button" mdbBtn color="primary" outline="true" mdbWavesEffect> Créer un compte
+			<mdb-icon fas icon="wallet" class="ml-1"></mdb-icon>
+		</button>
+	</div>
+
+</div>
+<!-- Jumbotron -->
+
+<div class="card-deck">
+
+	<mdb-card>
+
+		<!-- Card img -->
+		<div class="container">
+
+			<div class="row">
+				<div class="col text-center">
+					<img class="btclogo" src="assets/images/btc.png" alt="btc">
+				</div>
+			</div>
+		</div>
+
+
+
+		<!--Card content-->
+
+		<!--Title-->
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col text-center">
+					<h4>Bitcoin</h4>
+				</div>
+			</div>
+		</div>
+
+
+		<!--Text-->
+		<div class="container">
+
+			<div class="row">
+				<div class="col text-center">
+					<mdb-card-text>
+						Première crypto-monnaie à avoir vu le jour, Bitcoin (BTC) est la première crypto-monnaie au
+						monde en valeur,
+						inventé par Satoshi Nakamoto.
+					</mdb-card-text>
+					<div class="btns">
+						<button routerLink="/signin" mdbBtn type="button" gradient="peach" rounded="true" mdbWavesEffect>ACHETER</button>
+						<button routerLink="/signin" mdbBtn type="button" gradient="peach" rounded="true" mdbWavesEffect>VENDRE</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</mdb-card>
+
+	<mdb-card>
+
+		<!-- Card img -->
+		<div class="container">
+
+			<div class="row">
+				<div class="col text-center">
+					<img class="ltclogo" src="assets/images/lite.png" alt="ltc">
+				</div>
+			</div>
+		</div>
+
+
+
+		<!--Card content-->
+
+		<!--Title-->
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col text-center">
+					<h4>Litecoin</h4>
+				</div>
+			</div>
+		</div>
+
+
+		<!--Text-->
+		<div class="container">
+
+			<div class="row">
+				<div class="col text-center">
+					<mdb-card-text>
+						Litecoin (LTC ou Ł) est un projet de crypto-monnaie peer-to-peer et de logiciel open-source.
+					</mdb-card-text>
+					<div class="btns">
+						<button routerLink="/signin" mdbBtn type="button" gradient="aqua" rounded="true" mdbWavesEffect>ACHETER</button>
+						<button routerLink="/signin" mdbBtn type="button" gradient="aqua" rounded="true" mdbWavesEffect>VENDRE</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</mdb-card>
+
+	<!-- Card -->
+	<mdb-card>
+
+		<!-- Card img -->
+		<div class="container">
+
+			<div class="row">
+				<div class="col text-center">
+					<img class="ethrlogo" src="assets/images/ethr.png" alt="ethr">
+				</div>
+			</div>
+		</div>
+
+
+		<!--Card content-->
+
+		<!--Title-->
+
+		<div class="container">
+
+			<div class="row">
+				<div class="col text-center">
+					<h4>Ethereum</h4>
+				</div>
+			</div>
+		</div>
+
+
+		<!--Text-->
+		<div class="container">
+
+			<div class="row">
+				<div class="col text-center">
+					<mdb-card-text> Ethereum est une blockchain avec un langage de programmation intégré,
+						les gens utilisent la crypto-monnaie d'Ethereum, appelée Ether.
+					</mdb-card-text>
+					<div class="btns">
+						<button routerLink="/signin" mdbBtn type="button" gradient="purple" rounded="true" mdbWavesEffect>ACHETER</button>
+						<button routerLink="/signin" mdbBtn type="button" gradient="purple" rounded="true" mdbWavesEffect>
+							VENDRE</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</mdb-card>
+</div>
+
+<div class="container">
+	<div class="tbl">
+		<table class="table">
+
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>nom</th>
+					<th>Prix</th>
+					<th>Changement</th>
+					<th>Echanger</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let item of currencies | keyvalue; let index=index">
+
+					<td> {{index+1}}</td>
+					<td> <img class="mini" src="/assets/images/{{item.value.name+'.png'}}"> {{item.value.name =='BCH'?
+						'Bitcoin Cash' : item.value.name =='ETH'? 'Ethereum'
+						: item.value.name =='LTC'? 'Litecoin' : 'Bitcoin'}} {{item.value.name}}</td>
+					<td>{{item.value.price}} TND</td>
+					<td [attr.style]="'color:'+item.value.color">{{item.value.change}}% </td>
+					<td><button routerLink="/signin" type="button" mdbBtn color="success" mdbWavesEffect>Acheter</button></td>
+
+				</tr>
+
+
+			</tbody>
+		</table>
+	</div>
+</div>
+<!--  jumbotron -->
+<div class="jumbotron text-center ">
+
+	<!-- Grid row -->
+	<div class="row">
+
+		<!-- Grid column -->
+		<div class="col-sm-7">
+
+			<!-- Featured image -->
+			<div class="view overlay waves-light" mdbWavesEffect>
+				<img src="assets/images/shape/24.png" class="img-fluid" alt="pic001">
+
+			</div>
+
+		</div>
+		<!-- Grid column -->
+
+		<!-- Grid column -->
+		<div class="col-sm-5">
+
+			<!-- Excerpt -->
+
+			<br>
+			<h2 class="blue-text my-4 font-weight-bold">Transfert intraçable et traitement rapide.</h2>
+
+
+
+			<h4 class="h5 mb-4">Sur Laevitas, vous échangez directement avec une autre personne, en évitant les
+				intermédiaires lents.
+				<br>
+				La plupart des échanges sont terminés en quelques minutes..
+			</h4>
+
+
+
+
+
+		</div>
+		<!-- Grid column -->
+
+	</div>
+
+	<br>
+
+
+	<div class="row">
+		<!-- Grid column -->
+		<div class="col-sm-7">
+
+			<!-- Excerpt -->
+
+			<br>
+			<br>
+			<br>
+			<h2 class="blue-text my-4 font-weight-bold">Respect de la confidentialité et sécurité renforcée.</h2>
+
+
+
+			<h4 class="h5 mb-4">Les pirates informatiques ont volé des milliards de dollars dans les bourses
+				centralisées.
+				Laevitas propose une approche différente.
+				<br>
+
+				Sur Laevitas, les utilisateurs échangent entre eux - et non avec nous.
+
+				L'utilisation d'une plateforme peer-to-peer non-custodial vous permet de garder le contrôle et de
+				protéger votre portefeuille contre le vol.
+			</h4>
+
+		</div>
+
+		<!-- Grid column -->
+
+		<!-- Grid column -->
+		<div class="col-sm-5">
+
+			<!-- Featured image -->
+			<div class="view overlay waves-light" mdbWavesEffect>
+				<img src="assets/images/shape/25.png" class="img-fluid" alt="pic001">
+
+			</div>
+
+		</div>
+
+
+
+		<!-- Grid row -->
+	</div>
+</div>
+<!-- jumbotron -->

@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="row gutters">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="row gutters">
+                            <div class="col-md-12">
+                                <h3 class="mt-3 mb-2 text-primary">informations personnelles</h3>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="Street">Prenom:</label>
+                                    <input [(ngModel)]="CurrentUser.firstName" type="name" class="form-control" id="Street" placeholder="Prenom...">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="ciTy">nom:</label>
+                                    <input [(ngModel)]="CurrentUser.lastName" type="name" class="form-control" id="ciTy" placeholder="nom...">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="sTate">Email:</label>
+                                    <input [(ngModel)]="CurrentUser.email" type="text" class="form-control" id="sTate" placeholder="Email...">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="zIp">Mot de Passe :</label>
+                                    <input [(ngModel)]="CurrentUser.password" type="password" class="form-control" id="zIp" placeholder="Mot de Passe ...">
+                                </div>
+                            </div>
+                        </div>
+                            <div class="col-md-12">
+                                <div class="text-right">
+                                    <button type="button" id="submit" name="submit"
+                                        class="btn btn-secondary">Annuler</button>
+                                    <button type="button" id="submit" name="submit"
+                                        class="btn btn-primary" (click)="modifieruser(CurrentUser.id,CurrentUser)"   >Modifier</button>
+                                </div>
+                            </div>
+                            <div>
+                            <p style=" color: #4F8A10; " >{{message}}</p>
+                            </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-5">
+                
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">devise</th>
+                        <th scope="col">Quantite</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let pt of portedevise ; index as i ">
+                        <td>{{pt.deviseId}}    <img  src="../../assets/{{i+1}}.png"  width="30px" > <a *ngIf="name[i]!=''">{{name[i]}} </a> <a *ngIf="!name[i]!=''"> {{pt.devise.name}} </a> </td>
+                        <td>{{pt.Qte}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div>
+
+            </div>
+            
+        </div>
+
+
+    </div>
+</div>

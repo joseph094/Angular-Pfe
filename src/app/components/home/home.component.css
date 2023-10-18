@@ -1,0 +1,28 @@
+
+
+.btclogo{
+    width: 280px;
+    height:auto;
+    margin-bottom: 20px;
+
+}
+.ethrlogo{
+    width:180px;
+    height: auto;
+}
+
+.ltclogo{
+    width:175px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.table{
+    padding-top: 30px;
+}
+.mini {
+    width : 40px;
+}
+.tbl{
+    padding-top: 50px;
+}

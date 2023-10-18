@@ -1,0 +1,72 @@
+
+<div class="row">
+	<div class="col-sm-7"> 
+	  <mdb-card style="background-image: url('/assets/images/login-bg.jpg')"
+		class="card-image">
+		<img class="logo" src="../../../assets/bureau.png" height="650px" width="500px" style="margin-left: 120px;" alt="logo">
+	  </mdb-card>
+	</div>
+	<div class="col-sm-5">
+	  <mdb-card>
+  
+  
+			  <div class="wrap-login ">
+				  <form class="login-form validate-form">
+					  <span class="login-form-title ">
+						S'inscrire
+					  </span>
+  
+					  <div class="wrap-input validate-input" data-validate="Name is required">
+						  <span class="label-input">Prenom:</span>
+						  <input [(ngModel)]="registerUserData.firstName"  class="input" type="text" name="name" placeholder="Prenom...">
+						  <span class="focus-input"></span>
+					  </div>
+  
+					  <div class="wrap-input validate-input" data-validate = "Lastname is required">
+						  <span class="label-input">Nom:</span>
+						  <input [(ngModel)]="registerUserData.lastName" class="input" type="text" name="email" placeholder="nom...">
+						  <span class="focus-input"></span>
+					  </div>
+  
+					  <div   class="wrap-input validate-input" data-validate="Valid email is required: ex@abc.xyz">
+						  <span class="label-input">Email</span>
+						  <input [(ngModel)]="registerUserData.email" class="input" type="email" name="email" placeholder="Email address..."   >
+						  <span class="focus-input"></span>
+					  </div>
+  
+					  <div class="wrap-input validate-input" data-validate = "Password is required">
+						  <span class="label-input">Mot de passe</span>
+						  <input [(ngModel)]="registerUserData.password" class="input" type="password" name="pass" placeholder="*************">
+						  <span class="focus-input"></span>
+					  </div>
+  
+					  <div class="wrap-input validate-input" data-validate = "Repeat Password is required">
+						  <span class="label-input">répéter mot de passe</span>
+						  <input [(ngModel)]="confirmPassword" class="input" type="password" name="repeat-pass" placeholder="*************"  >
+						  <span class="focus-input"></span>
+					  </div>
+					  <ng-container *ngIf="!RepeatPass()">
+                       <p> Confirmer Mot de passe   </p>
+					  </ng-container>
+  
+					  <div class="container-login-form-btn">
+						  <div class="wrap-login-form-btn">
+							  <div class="login-form-bgbtn"></div>
+							  <button [disabled] = "!RepeatPass()||verifychamps()||!validateEmail(registerUserData.email)" class="login-form-btn" (click)="RegisterUser()">
+								S'inscrire
+							  </button>
+						  </div>
+  
+						  <a href="#" class="dis-block txt3 hov1" routerLink="/signin">
+							Connexion
+							  <i class="fa fa-long-arrow-right "></i>
+						  </a>
+					  </div>
+				  </form>
+			  </div>
+		  </mdb-card>
+	  </div>
+	  </div>
+	  
+  
+  

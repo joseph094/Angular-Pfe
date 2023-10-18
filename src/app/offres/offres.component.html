@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="row gutters">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="row gutters">
+                            <div class="col-md-12">
+                               
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="devise">La devise que vous vendez :</label>
+                                    <select [(ngModel)]='selectedBase' (change)='selectbase()' id="devise" name="devise"
+                                        class="form-control" required>
+                                        <option *ngFor="let item of data" [ngValue]="item">{{item.name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="devise">La devise que vous achetez :</label>
+                                    <select [(ngModel)]='selectedQuote' (change)='selectquote()' id="devise" name="devise"
+                                        class="form-control" required >
+                                        <option  *ngFor="let item of devises" [ngValue]="item" >
+                                            {{item.name}}
+                                        
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="qte">Quantite:</label>
+                                    <input [(ngModel)]="offre.quantite" type="number" step="any" class="form-control" id="qte"
+                                        placeholder="Saisir Combien vous vendez" required >
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="valeur">Prix :</label>
+                                    <input     [(ngModel)]="offre.valeur" type="number" step="any" class="form-control" id="valeur"
+                                        placeholder=" pour combien vous vendez " required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="text-right">
+                                <button type="button" id="submit" name="submit" (click)="Annuler(offre)"
+                                    class="btn btn-secondary">Annuler</button>
+                                <button type="button" id="submit" name="submit"      
+
+                                [disabled]="!check(offre)"   class="btn btn-primary" (click)="lanceroffre(iduser,selectedBase.id,selectedQuote.id,offre)">Confirmer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <p *ngIf="message" style="color:rgb(67, 192, 67)">  {{message}}</p>
+                    <p *ngIf="error" style="color:red"> {{error}} </p>
+                </div>
+
+
+            </div>
+            <div class="col-md-7">
+                <img src="../../assets/back.png" width="550px" >
+
+            </div>
+        </div>
+    </div>
+</div>

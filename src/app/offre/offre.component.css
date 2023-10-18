@@ -1,0 +1,42 @@
+/*--la devise que vous vendez --*/
+
+select {
+    flex: 1;
+    padding: 0 .5em;
+    cursor: pointer;
+    width: 40%;
+    height: 25px;
+    color: black;
+  }
+  .form-control {
+    border: 1px solid #cfd1d8;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: .825rem;
+    background: #ffffff;
+    color: #2e323c;
+    font-size: 10pt;
+    width: 275px;
+}
+
+.card {
+    background: #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 0;
+    margin-bottom: 1rem;
+    margin-right: 0;
+}
+body {
+    margin: 0;
+    padding-top: 40px;
+    color: #2e323c;
+    background: #f5f6fa;
+    position: relative;
+    height: 100%;
+}
+label{
+    vertical-align: top;
+}

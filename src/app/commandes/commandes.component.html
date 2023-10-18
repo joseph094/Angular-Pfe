@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row"> 
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Vendeur </th>
+                        <th>Quantite</th>
+                        <th>Valeur</th>
+                        <th>Statut</th>
+                        <th>DeviseQuote</th>
+                        <th>DeviseBase</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody> 
+                    <tr class="active-row" *ngFor="let offre of offres" >
+                        <ng-container  *ngIf="!(offre.__user__.id==id)">
+                    <td >{{offre.__user__.firstName}} {{offre.__user__.lastName}} </td>
+                    <td >{{offre.quantite}} </td>
+                    <td >{{offre.valeur}} </td>
+                    <td ><span class="label label-warning">{{offre.status}} </span> </td>
+                    <td  > {{offre.__devicur__.name}} </td>
+                    <td >{{offre.__devibase__.name}} </td>
+                    <td class="text-center align-middle"> <button type="button" class="btn btn-primary" (click)="acheterOffre(id,offre.ido)" >Acheter</button> </td>
+                        </ng-container>
+            </table>
+            <h4>  {{error | json}} </h4>
+        </div>
+
+    </div>
+</div>

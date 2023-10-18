@@ -1,0 +1,63 @@
+<mat-dialog-content>
+    <h5 class="mat-dialog-title">Votre commande a ete effectuée avec succès </h5>
+    <div class="col-md-12">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Vendeur: </h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{data.__offre__.__user__.firstName}} {{data.__offre__.__user__.lastName}}
+        </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Devise Acheté:</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{data.__offre__.__devibase__.name}} 
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Quantité:</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{data.__offre__.quantite}} 
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Pour(Valeur):</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{data.__offre__.valeur}} 
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Devise Base:</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                    {{data.__offre__.__devicur__.name}} 
+                               </div>
+              </div>
+              <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Date Transaction </h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{data.dateTrans|date:'shortDate'}} 
+              </div>
+            </div>
+          </div>
+        </div>     
+    </div>
+</mat-dialog-content>
+

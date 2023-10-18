@@ -1,0 +1,133 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 style="color:#1a53ff ; ">Vos Offres: </h3>
+            <table class="table">
+                <thead style="color: grey;">
+                    <tr>
+                        <td>Quantite</td>
+                        <td>Valeur</td>
+                        <td>Statut</td>
+                        <td>DeviseQuote</td>
+                        <td>DeviseBase</td>
+                        <td style="width: auto;"></td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="active-row" *ngFor="let offre of offres">
+                        <td>{{offre.quantite}} </td>
+                        <td>{{offre.valeur}} </td>
+                        <td><span [ngClass]="getRowColor(offre)"
+                                style="font-size: 10pt ;font: 1em sans-serif;">{{offre.status}} </span> </td>
+                        <td> {{offre.__devicur__.name}} </td>
+                        <td>{{offre.__devibase__.name}} </td>
+                        <td class="text-center align-middle"><a *ngIf="getStatus(offre)"
+                                (click)="delete_offre(offre.ido)"> <i class="fa fa-trash" aria-hidden="true"></i></a>
+                        </td>
+                        <td> <a *ngIf="getStatus(offre)" (click)="openDialog(offre)"><i class="fa fa-refresh"
+                                    aria-hidden="true"></i></a></td>
+
+                    </tr>
+            </table>
+
+        </div>
+        <div class="col-md-4">
+            <h3 style="color:#1a53ff ; ">Votre Portefeuille: </h3>
+            <table class="table">
+                <thead style="color: gray;">
+                    <tr>
+                        <td>#</td>
+                        <td scope="col">devise</td>
+                        <td scope="col">Quantite</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let pt of portedevise ; index as i ">
+                        <td> {{pt.deviseId}} </td>
+                        <td> <img src="../../assets/{{i+1}}.png" width="30px" style="margin-right: 10px;"> <a *ngIf="name[i]!=''">{{name[i]}} </a> <a *ngIf="!name[i]!=''"> {{pt.devise.name}} </a>
+                        </td>
+                        <td>{{pt.Qte}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="text-align: center;;">
+                <button (click)="openRemp()" class="btn btn-primary"
+                    style=" margin-left: -1px;margin-top: -10px; width: 100%;">Remplir votre portefeuille</button>
+            </div>
+        </div>
+        <div class="col-md-8" style="margin-top: 40px;">
+            <div class="container">
+                <div class="tbl">
+                    <table class="table">
+
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>nom</th>
+                                <th>Prix</th>
+                                <th>Changement</th>
+                             
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of currencies | keyvalue; let index=index">
+
+                                <td> {{index+1}}</td>
+                                <td> <img class="mini" src="/assets/images/{{item.value.name+'.png'}}">
+                                    {{item.value.name =='BCH'?
+                                    'Bitcoin Cash' : item.value.name =='ETH'? 'Ethereum'
+                                    : item.value.name =='LTC'? 'Litecoin' : 'Bitcoin'}} {{item.value.name}}</td>
+                                <td>{{item.value.price}} TND</td>
+                                <td [attr.style]="'color:'+item.value.color">{{item.value.change}}% </td>
+                                
+
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-12" style="margin-top: 50px;">
+            <h3 style="color:#1a53ff ; ">Vos Commandes: </h3>
+            <table class="table">
+                <thead style="color: grey;">
+                    <tr>
+                        <td>Vendeur</td>
+                        <td>acheteur</td>
+                        <td>Quantite</td>
+                        <td>Montant</td>
+                        <td>DeviseQuote</td>
+                        <td>DeviseBase</td>
+                        <td>Date Trans</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="active-row" *ngFor="let commande of commandes">
+                        <td class="col-md-3">{{commande.__offre__.__user__.firstName}}
+                            {{commande.__offre__.__user__.lastName}} </td>
+                        <td class="col-md-3">{{commande.__Achateur__.firstName}} {{commande.__Achateur__.lastName}}
+                        </td>
+                        <td class="col-md-2">{{commande.__offre__.quantite}} </td>
+                        <td class="col-md-2">{{commande.__offre__.valeur}} </td>
+                        <td class="col-md-3">{{commande.__offre__.__devicur__.name}} </td>
+                        <td class="col-md-2">{{commande.__offre__.__devibase__.name}} </td>
+                        <td class="col-md-3">{{commande.dateTrans|date:'shortDate'}} </td>
+
+
+            </table>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>

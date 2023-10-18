@@ -1,0 +1,27 @@
+<mat-dialog-content>
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="devise">La devise:</label>
+            <select [(ngModel)]="this.selectedBase" id="devise"  name="devise" (change)='base()'   class="form-control"
+                required>
+                <option *ngFor="let item of data" [ngValue]="item">{{item.name}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="qte">Quantite:</label>
+            <input type="number" step="any" class="form-control" id="qte" [(ngModel)]='quantite'
+                placeholder="Saisir Combien vous Souhaitez" required>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="text-right">
+            <button (click)="remplir_Portefeuille()" type="button" id="submit" name="submit" class="btn btn-primary">Ajouter</button>
+        </div>
+    </div>
+    <div class="col-md-12">
+       <h4 style=" color: #4F8A10; " >  {{message}}  </h4>
+    </div>
+</mat-dialog-content>
+

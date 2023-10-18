@@ -1,0 +1,54 @@
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+ <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <!------ Include the above in your HEAD tag ---------->
+ </head>
+ <header>
+ 
+ <div id="top-nav" class="navbar navbar-inverse navbar-static-top">
+     <div class="container-fluid">
+         <div class="navbar-header">
+             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+             </button>
+             <a class="navbar-brand" routerLink="/dashboard"> <img class="smlogo" src="/assets/images/laevitas-logo-white.png" ></a>
+         </div>
+         <ul class="nav navbar-nav navbar-right">
+             <li><a   (click)="logout()" routerLink="/"><i class="fa fa-sign-out"></i>Logout</a></li>
+             </ul>
+ 
+        
+                 
+         </div>
+     </div>
+ </header>
+ <!-- /Header -->
+ 
+ <!-- Main -->
+ 
+ <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12">
+ 
+     <ul class="nav nav-pills nav-stacked" style="border-right:1px solid black">
+         <!--<li class="nav-header"></li>-->
+         <li><a routerLink="/dashboard"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+         <li><a routerLink="/profil"><i class="fas fa-user"></i> Profil</a></li>
+         <li><a routerLink="/offres"><i class="fas fa-hand-holding-usd"></i> Offres</a></li>
+         <li><a routerLink="/commandes"><i class="fas fa-file-signature"></i> Commandes</a></li>
+         
+ 
+     </ul>
+ </div><!-- /span-3 -->
+ <div class="col-lg-10 col-md-10 col-sm-9 col-xs-12">
+     <!-- Right -->
+ 
+     <a routerLink="/dashboard"><strong><span class="fa fa-dashboard"></span> My Dashboard</strong></a>
+     <hr>
+ </div>
+ 

@@ -1,0 +1,19 @@
+select {
+    flex: 1;
+    padding: 0 .5em;
+    cursor: pointer;
+    width: 40%;
+    height: 25px;
+    color: black;
+  }
+  .form-control {
+    border: 1px solid #cfd1d8;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: .825rem;
+    background: #ffffff;
+    color: #2e323c;
+    font-size: 10pt;
+    width: 275px;
+  }
